@@ -2,13 +2,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in);
-        FrotaCarros f = new FrotaCarros();
+        Veiculo v1 =  new FrotaCarros(133213, 290, "carro", 5);
+        Veiculo v2 = new FrotaCaminhoes(58723, 1230, "caminhão", 1000);
 
-        f.adicionarQuilometragem(scanner.nextInt());
 
+        v1.kmTxt();
+        v1.adicionarQuilometragem(scanner.nextInt());
+        v2.kmTxt();
+        v2.adicionarQuilometragem(scanner.nextInt());
 
-        System.out.println("este veiculo atualmente tem "+f.getQuilometragemVeiculo()+" kilometros rodados.");
+        v1.mostrarVeiculo();
+        v2.mostrarVeiculo();
 
+        v1.percorrer();
+        v2.percorrer();
 
     }
 }

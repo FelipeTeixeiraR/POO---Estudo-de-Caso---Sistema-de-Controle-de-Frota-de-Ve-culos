@@ -1,37 +1,16 @@
-import com.sun.jdi.DoubleValue;
-
-public class FrotaCarros {
-
-    private int quilometragemVeiculo;
-    private String tipoVeiculo;
+public class FrotaCarros extends Veiculo{
     private int quantiadePassageirosCarro;
-    private int capacidadeDeCarga;
 
-
-    public FrotaCarros(){
-
-    }
-    public FrotaCarros(int quilometragemVeiculo){
-        this.quilometragemVeiculo = 0;
+    public FrotaCarros(){}
+    public FrotaCarros(int idVeiculo, int quilometragemVeiculo, String tipoVeiculo, int quantiadePassageirosCarro){
+        super(idVeiculo, quilometragemVeiculo, tipoVeiculo);
+        this.quantiadePassageirosCarro = quantiadePassageirosCarro;
     }
 
-
-
-    public void adicionarQuilometragem(int kms){
-        if(kms>=0){
-            this.quilometragemVeiculo+=kms;
-        }
-        else{
-            System.out.println("A entrada não pode ser igual ou menor que 0!!!");
-        }
+    @Override
+    public void mostrarVeiculo(){
+        System.out.println("seu "+getTipoVeiculo()+" com uma capacidade de passageiros de "+this.quantiadePassageirosCarro+" pessoas e com a placa:|"+ getIdVeiculo()+"| percorreu um total de: "+getQuilometragemVeiculo()+ " kilometros.");
     }
-
-    public int getQuilometragemVeiculo(){return this.quilometragemVeiculo;}
-
-    public void setQuilometragemVeiculo(int quilometragemVeiculo){this.quilometragemVeiculo = quilometragemVeiculo;}
-
-
-
-    
 
 }
+
